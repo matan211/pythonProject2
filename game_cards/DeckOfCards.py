@@ -1,8 +1,9 @@
 from random import shuffle
 
 class DeckOfCards:
+
     def __init__(self):
-        self.stuck=[]
+        self.stack=[]
         suits = ["clubs", "diamonds", "hearts", "spades"]
         for suit in suits:
             for rank in range(1, 14):
@@ -10,5 +11,10 @@ class DeckOfCards:
 
 
     def cards_shuffle(self):
-        for i in range(0, 1):
-            shuffle(self.stack)
+        shuffle(self.stack)
+
+
+    def deal_one(self):
+        return self.stack.pop()  # we want the last card from deck
+
+
