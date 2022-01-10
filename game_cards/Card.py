@@ -36,6 +36,12 @@ class Card:
 
         return "{} of {}".format(value, suit)
 
+    def __eq__(self, other):
+        if self.value == other.value and self.suit == other.suit:
+            return True
+        else:
+            return False
+
     def __gt__(self, other):
         """function gets card and compares it to self card, if self is higher, it returns True, else, it returns
         False """
