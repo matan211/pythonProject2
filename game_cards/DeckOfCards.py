@@ -15,5 +15,5 @@ class DeckOfCards:
         shuffle(self.stack)
 
     def deal_one(self):
-        location = randint(0, 51)
-        return self.stack.pop(location)
+        card = self.stack.pop()
+        return card
