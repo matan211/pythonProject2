@@ -24,7 +24,8 @@ class Player:
         # deck must be DeckOfCards type
         if type(deck) != DeckOfCards:
             raise TypeError
-        for i in range(self.num_of_cards):
+        ammount_card = min(self.num_of_cards, len(deck.stack))
+        for i in range(ammount_card):
             card = deck.deal_one()
             # add card to player's hand only if it is not there already
             if card not in self.all_cards:

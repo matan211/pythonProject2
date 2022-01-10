@@ -1,5 +1,8 @@
 from unittest import TestCase
+
+from game_cards.Card import Card
 from game_cards.Player import Player
+from game_cards.DeckOfCards import DeckOfCards
 
 
 class TestPlayer(TestCase):
@@ -37,12 +40,32 @@ class TestPlayer(TestCase):
             Player('aaa', True)
 
     def test_set_hand_valid(self):
-        self.player.set_hand()
+        deck = DeckOfCards()
+        self.player.set_hand(deck)
         self.assertEqual(len(self.player.all_cards), 26)
+        card = self.player.get_card()
+        # add card twice to player's hand
+        # card has to appear only once in player's hand
+        self.player.add_card(card)
+        self.player.add_card(card)
+        self.assertEqual(self.player.all_cards.count(card), 1)
 
+    # test case of invalid set hand
+    def test_set_hand_invalid(self):
+        with self.assertRaises(TypeError):
+            self.player.set_hand(8)
+        with self.assertRaises(TypeError):
+            self.player.set_hand(True)
+        with self.assertRaises(TypeError):
+            self.player.set_hand('aaa')
 
     def test_get_card(self):
-        self.fail()
+        deck = DeckOfCards()
+        self.player.set_hand(deck)
+        card = self.player.get_card()
+    #     card has to be removed from player's hand
+        self.assertEqual(self.player.all_cards.count(card), 0)
+        self.assertTrue(type(card) == Card)
 
     def test_add_card(self):
         self.fail()

@@ -1,7 +1,7 @@
 from game_cards.CardGame import CardGame
-# name1 = input("enter player name: ")
-# name2 = input("enter player name: ")
-game = CardGame('Matan', 'Daniel')
+name1 = input("enter player name: ")
+name2 = input("enter player name: ")
+game = CardGame(name1, name2)
 for i in range(10):
     print("round", i+1)
     c1 = game.player1.get_card()
