@@ -26,6 +26,7 @@ class Player:
             raise TypeError
         for i in range(self.num_of_cards):
             card = deck.deal_one()
+            # add card to player's hand only if it is not there already
             if card not in self.all_cards:
                 self.all_cards.append(card)
 
