@@ -31,7 +31,7 @@ class Player:
     # function returns random card from player's hand
     def get_card(self):
         location = randint(0, len(self.all_cards) - 1)
-        card = self.all_cards[location]
+        card = self.all_cards.pop(location)
         return card
 
     # function adds card to player's hand

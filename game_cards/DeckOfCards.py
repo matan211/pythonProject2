@@ -16,4 +16,4 @@ class DeckOfCards:
 
     def deal_one(self):
         location = randint(0, 51)
-        return self.stack[location]
+        return self.stack.pop(location)
