@@ -21,6 +21,7 @@ class Player:
 
     # set the card list of the player
     def set_hand(self, deck):
+        # deck must be DeckOfCards type
         if type(deck) != DeckOfCards:
             raise TypeError
         for i in range(self.num_of_cards):
