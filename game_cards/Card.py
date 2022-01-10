@@ -14,7 +14,27 @@ class Card:
 
     # function prints the card
     def __str__(self):
-        return f"value of the card is: {self.value} and suit of the card is: {self.suit}"
+        value = self.value
+        if value == 1:
+            value = "ace"
+        elif value == 11:
+            value = "jack"
+        elif value == 12:
+            value = "queen"
+        elif value == 13:
+            value = "king"
+
+        suit = self.suit
+        if suit == 1:
+            suit = 'Diamond'
+        elif suit == 2:
+            suit = 'Spade'
+        elif suit == 3:
+            suit = 'Heart'
+        elif suit == 4:
+            suit = 'Club'
+
+        return "{} of {}".format(value, suit)
 
     def __gt__(self, other):
         """function gets card and compares it to self card, if self is higher, it returns True, else, it returns
@@ -38,4 +58,5 @@ class Card:
             return True
         else:
             return False
+
 
