@@ -13,7 +13,7 @@ class Card:
         self.suit = suit
 
     # function prints the card
-    def __str__(self):
+    def __repr__(self):
         value = self.value
         if value == 1:
             value = "ace"
