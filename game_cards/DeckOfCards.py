@@ -15,6 +15,6 @@ class DeckOfCards:
 
 
     def deal_one(self):
-        return self.stack.pop()  # we want the last card from deck
+        return self.stack.pop()
 
 
