@@ -16,9 +16,14 @@ for i in range(10):
         game.player2.add_card(c2)
         game.player2.add_card(c1)
         print(f"the winner in this round is: {game.player2.name}")
+    print(f"{game.player1.name} now has {len(game.player1.all_cards)} cards")
+    print(f"{game.player2.name} now has {len(game.player2.all_cards)} cards")
     print()
 
 if game.get_winner() is None:
-    print("tie")
+    print("It's tie!")
 else:
     print(f"the winner is: {game.get_winner().name}")
+    print(f"{game.get_winner().name} has {len(game.get_winner().all_cards)} cards")
+    print(game.get_winner())
+
