@@ -13,18 +13,19 @@ class Player:
         if num_of_cards > 26 or num_of_cards < 10:
             raise ValueError("number of cards must be between 10-26!")
         self.name = name
-        self.num_of_cards = num_of_cards
+        self.max_num_of_cards = num_of_cards
         self.all_cards = []
 
     def __str__(self):
-        return f"player name: {self.name}, number of cards: {self.num_of_cards}, player's hand: {self.all_cards}"
+        return f"player name: {self.name}, player's hand: {self.all_cards} "
 
     # set the card list of the player
     def set_hand(self, deck):
         # deck must be DeckOfCards type
         if type(deck) != DeckOfCards:
             raise TypeError
-        for i in range(self.num_of_cards):
+        ammount_card = min(self.max_num_of_cards, len(deck.stack))
+        for i in range(ammount_card):
             card = deck.deal_one()
             # add card to player's hand only if it is not there already
             if card not in self.all_cards:
